@@ -17,6 +17,8 @@ def write_key():
     else:
         print("The 'key.key' file already exists. Skipping key generation.")
 
+# Generating Key
+write_key()
 
 def load_key():
     try:
@@ -25,7 +27,7 @@ def load_key():
         file.close()
         return key
     except FileNotFoundError:
-        messagebox.showerror("Error", "Key file not found. Generating a new key...")
+        messagebox.showerror("Error", "Key file not found. Generating a new key.\nPlease re-run the program.")
         return write_key()
     except ValueError as e:
         messagebox.showerror("Error", str(e))
